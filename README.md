@@ -1,0 +1,2 @@
+# collected.favorite
+Module Bitrix
