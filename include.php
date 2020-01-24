@@ -1,4 +1,8 @@
 <?
+/**
+ * Copyright (c) 16/12/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
 global $DBType, $DB, $MESS, $APPLICATION;
 IncludeModuleLangFile(__FILE__);
 
@@ -21,7 +25,7 @@ function RSFavoritePropCheck($IBLOCK_ID)
 			$PropertyID = $arProp['ID'];
 		} else {
 			$arFields = array(
-				'NAME' => GetMessage('RS.FAVORITE.PROP_NAME'),
+				'NAME' => GetMessage('COLLECTED_FAVORITE.PROP_NAME'),
 				'ACTIVE' => 'Y',
 				'SORT' => '500',
 				'CODE' => $CODE,

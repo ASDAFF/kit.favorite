@@ -1,4 +1,8 @@
 <?
+/**
+ * Copyright (c) 16/12/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
 global $MESS;
 IncludeModuleLangFile(__FILE__);
 
@@ -19,7 +23,7 @@ Class collected_favorite extends CModule
 		$path = str_replace("\\", "/", __FILE__);
 		$path = substr($path, 0, strlen($path) - strlen("/index.php"));
 		include($path."/version.php");
-
+	
         if (is_array($arModuleVersion) && array_key_exists("VERSION", $arModuleVersion)) {
             $this->MODULE_VERSION = $arModuleVersion["VERSION"];
             $this->MODULE_VERSION_DATE = $arModuleVersion["VERSION_DATE"];
@@ -28,9 +32,9 @@ Class collected_favorite extends CModule
             $this->MODULE_VERSION_DATE = "2014.01.01";
         }
 
-		$this->MODULE_NAME = GetMessage("RS.FAVORITE.INSTALL_NAME");
-		$this->MODULE_DESCRIPTION = GetMessage("RS.FAVORITE.INSTALL_DESCRIPTION");
-		$this->PARTNER_NAME = GetMessage("RS.FAVORITE.INSTALL_COPMPANY_NAME");
+		$this->MODULE_NAME = GetMessage("COLLECTED_FAVORITE.INSTALL_NAME");
+		$this->MODULE_DESCRIPTION = GetMessage("COLLECTED_FAVORITE.INSTALL_DESCRIPTION");
+		$this->PARTNER_NAME = GetMessage("COLLECTED_FAVORITE.INSTALL_COPMPANY_NAME");
         $this->PARTNER_URI  = "https://asdaff.github.io/";
 	}
 
