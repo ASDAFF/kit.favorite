@@ -6,9 +6,9 @@
 global $MESS;
 IncludeModuleLangFile(__FILE__);
 
-Class collected_favorite extends CModule
+Class kit_favorite extends CModule
 {
-    var $MODULE_ID = "collected.favorite";
+    var $MODULE_ID = "kit.favorite";
 	var $MODULE_VERSION;
 	var $MODULE_VERSION_DATE;
 	var $MODULE_NAME;
@@ -16,7 +16,7 @@ Class collected_favorite extends CModule
 	var $MODULE_CSS;
 	var $MODULE_GROUP_RIGHTS = "Y";
 
-	function collected_favorite()
+	function kit_favorite()
 	{
 		$arModuleVersion = array();
 
@@ -32,9 +32,9 @@ Class collected_favorite extends CModule
             $this->MODULE_VERSION_DATE = "2014.01.01";
         }
 
-		$this->MODULE_NAME = GetMessage("COLLECTED_FAVORITE.INSTALL_NAME");
-		$this->MODULE_DESCRIPTION = GetMessage("COLLECTED_FAVORITE.INSTALL_DESCRIPTION");
-		$this->PARTNER_NAME = GetMessage("COLLECTED_FAVORITE.INSTALL_COPMPANY_NAME");
+		$this->MODULE_NAME = GetMessage("KIT_FAVORITE.INSTALL_NAME");
+		$this->MODULE_DESCRIPTION = GetMessage("KIT_FAVORITE.INSTALL_DESCRIPTION");
+		$this->PARTNER_NAME = GetMessage("KIT_FAVORITE.INSTALL_COPMPANY_NAME");
         $this->PARTNER_URI  = "https://asdaff.github.io/";
 	}
 
@@ -42,8 +42,8 @@ Class collected_favorite extends CModule
 	function InstallDB()
 	{
 		global $DB, $DBType, $APPLICATION;
-		RegisterModule("collected.favorite");
-		$DB->RunSQLBatch($_SERVER['DOCUMENT_ROOT']."/bitrix/modules/collected.favorite/install/db/".$DBType."/install.sql");
+		RegisterModule("kit.favorite");
+		$DB->RunSQLBatch($_SERVER['DOCUMENT_ROOT']."/bitrix/modules/kit.favorite/install/db/".$DBType."/install.sql");
 		return TRUE;
 	}
 
@@ -59,7 +59,7 @@ Class collected_favorite extends CModule
 
 	function InstallFiles()
 	{
-		CopyDirFiles($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/collected.favorite/install/components", $_SERVER["DOCUMENT_ROOT"]."/bitrix/components", true, true);
+		CopyDirFiles($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/kit.favorite/install/components", $_SERVER["DOCUMENT_ROOT"]."/bitrix/components", true, true);
 		return TRUE;
 	}
 
@@ -72,8 +72,8 @@ Class collected_favorite extends CModule
 	function UnInstallDB()
 	{
 		global $DB, $DBType, $APPLICATION;
-		$DB->RunSQLBatch($_SERVER['DOCUMENT_ROOT']."/bitrix/modules/collected.favorite/install/db/".$DBType."/uninstall.sql");
-		UnRegisterModule("collected.favorite");
+		$DB->RunSQLBatch($_SERVER['DOCUMENT_ROOT']."/bitrix/modules/kit.favorite/install/db/".$DBType."/uninstall.sql");
+		UnRegisterModule("kit.favorite");
 		return TRUE;
 	}
 
@@ -105,7 +105,7 @@ Class collected_favorite extends CModule
 		$keyGoodOptions = $this->InstallOptions();
 		$keyGoodFiles = $this->InstallFiles();
 		$keyGoodPublic = $this->InstallPublic();
-		$APPLICATION->IncludeAdminFile(GetMessage("SPER_INSTALL_TITLE"), $_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/collected.favorite/install/install.php");
+		$APPLICATION->IncludeAdminFile(GetMessage("SPER_INSTALL_TITLE"), $_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/kit.favorite/install/install.php");
     }
 
     function DoUninstall()
@@ -116,6 +116,6 @@ Class collected_favorite extends CModule
 		$keyGoodOptions = $this->UnInstallOptions();
 		$keyGoodDB = $this->UnInstallDB();
 		$keyGoodPublic = $this->UnInstallPublic();
-		$APPLICATION->IncludeAdminFile(GetMessage("SPER_UNINSTALL_TITLE"), $_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/collected.favorite/install/uninstall.php");
+		$APPLICATION->IncludeAdminFile(GetMessage("SPER_UNINSTALL_TITLE"), $_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/kit.favorite/install/uninstall.php");
     }
 }

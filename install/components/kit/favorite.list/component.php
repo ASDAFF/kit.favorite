@@ -3,7 +3,7 @@
  * Copyright (c) 16/12/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
  */
 
-if(!CModule::IncludeModule("collected.favorite"))
+if(!CModule::IncludeModule("kit.favorite"))
 {
 	ShowError(GetMessage("RS_FAVORITE_NOT_INSTALLED"));
 	return;

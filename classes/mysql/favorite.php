@@ -67,7 +67,7 @@ class CRSFavorite
 			DISTINCT
 				RSF.*
 			FROM
-				b_collected_favorite RSF
+				b_kit_favorite RSF
 			".$sFilter.$sOrder;
 
 		return $DB->Query($strSql, false, "File: ".__FILE__."<br>Line: ".__LINE__);
@@ -85,7 +85,7 @@ class CRSFavorite
 
 		$DB->StartTransaction();
 
-		$res = $DB->Query("DELETE FROM b_collected_favorite WHERE ID=".$ID, false, "File: ".__FILE__."<br>Line: ".__LINE__);
+		$res = $DB->Query("DELETE FROM b_kit_favorite WHERE ID=".$ID, false, "File: ".__FILE__."<br>Line: ".__LINE__);
 		if($res)
 		{
 			$DB->Commit();
@@ -100,7 +100,7 @@ class CRSFavorite
 	{
 		global $DB;
 		
-		$ID = $DB->Add("b_collected_favorite", $arFields);
+		$ID = $DB->Add("b_kit_favorite", $arFields);
 		if(IntVal($ID)>0)
 			return $ID;
 		else
@@ -115,10 +115,10 @@ class CRSFavorite
 		if(isset($arFields["ID"]))
 			unset($arFields["ID"]);
 		
-		$strUpdate = $DB->PrepareUpdate("b_collected_favorite", $arFields);
+		$strUpdate = $DB->PrepareUpdate("b_kit_favorite", $arFields);
 		if($strUpdate!="")
 		{
-			$strSql = "UPDATE b_collected_favorite SET ".$strUpdate." WHERE ID=".$ID;
+			$strSql = "UPDATE b_kit_favorite SET ".$strUpdate." WHERE ID=".$ID;
 			$DB->Query($strSql, false, "File: ".__FILE__."<br>Line: ".__LINE__);
 			return $ID;
 		} else {

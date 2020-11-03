@@ -7,7 +7,7 @@ global $DBType, $DB, $MESS, $APPLICATION;
 IncludeModuleLangFile(__FILE__);
 
 CModule::AddAutoloadClasses(
-	"collected.favorite",
+	"kit.favorite",
 	array(
 		"CRSFavorite" => "classes/".$DBType."/favorite.php",
 	)
@@ -25,7 +25,7 @@ function RSFavoritePropCheck($IBLOCK_ID)
 			$PropertyID = $arProp['ID'];
 		} else {
 			$arFields = array(
-				'NAME' => GetMessage('COLLECTED_FAVORITE.PROP_NAME'),
+				'NAME' => GetMessage('KIT_FAVORITE.PROP_NAME'),
 				'ACTIVE' => 'Y',
 				'SORT' => '500',
 				'CODE' => $CODE,

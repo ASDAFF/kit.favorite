@@ -1,4 +1,4 @@
-# collected.favorite
+# kit.favorite
 Module Bitrix
 
 

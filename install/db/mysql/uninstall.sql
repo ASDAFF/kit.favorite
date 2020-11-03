@@ -1,1 +1,1 @@
-DROP TABLE IF EXISTS b_collected_favorite;
+DROP TABLE IF EXISTS b_kit_favorite;

@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS b_collected_favorite
+CREATE TABLE IF NOT EXISTS b_kit_favorite
 (
 	ID int(11) NOT NULL AUTO_INCREMENT,
 	FUSER_ID int(18) NOT NULL,
